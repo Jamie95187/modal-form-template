@@ -8,6 +8,8 @@ import TriggerButton from '../TriggerButton/TriggerButton';
 // to any element and they can be focused with TAB key. Since, we do not want to focus
 // on Modal if its not visible, we gave it -1
 
+// The aside tag takes 100% height and width, has a dark overlay background.
+
 const Modal = ({
   onClickModal,
   onKeyDown,
