@@ -3,6 +3,8 @@ import './App.css';
 import { Container } from './Container';
 import { Filler } from './Filler';
 
+// Stateless Component (Dumb Component)
+
 const App = () => {
 
   const triggerText = 'Open Form';
