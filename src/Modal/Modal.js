@@ -1,8 +1,8 @@
-import React, { Component, createPortal } from 'react';
+import React from 'react';
 import './Modal.css';
-import { FocusTrap } from 'focus-trap-react';
-import { Form } from '../Form';
-import TriggerButton from '../TriggerButton/TriggerButton';
+import FocusTrap from 'focus-trap-react';
+import Form from '../Form/Form';
+import ReactDOM from 'react-dom';
 
 // tabIndex -1 makes it non-focusable. You can give tabIndex of 1 or above
 // to any element and they can be focused with TAB key. Since, we do not want to focus
@@ -11,7 +11,7 @@ import TriggerButton from '../TriggerButton/TriggerButton';
 // The aside tag takes 100% height and width, has a dark overlay background.
 
 const Modal = ({
-  onClickModal,
+  onClickOutside,
   onKeyDown,
   modalRef,
   buttonRef,
@@ -19,7 +19,7 @@ const Modal = ({
   onSubmit
 }) => {
 
-  return createPortal(
+  return ReactDOM.createPortal(
     <FocusTrap>
       <aside
         tag="aside"

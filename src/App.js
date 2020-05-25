@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Container } from './Container';
-import { Filler } from './Filler';
+import Container from './Container/Container';
+import Filler from './Filler/Filler';
 
 // Stateless Component (Dumb Component)
 
