@@ -53,14 +53,14 @@ class Container extends Component {
         triggerText={this.props.triggerText}
       />
 
-  /*{
+  {/*
     Conditionally renders the Modal
     onSubmit form submit action
     modalRef to refer to the modal area
     buttonRef to refer to close button
     closeModal and showModal to close and open Modal
     onClickOutside detect user clicked outside the Modal
-  }*/
+  */}
 
   {this.state.isShown ? (
     <Modal
