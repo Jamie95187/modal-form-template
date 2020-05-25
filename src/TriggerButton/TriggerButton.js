@@ -12,4 +12,4 @@ const Trigger = ({ triggerText, buttonRef, showModal }) => {
   );
 };
 
-export default  Trigger;
+export default Trigger;
