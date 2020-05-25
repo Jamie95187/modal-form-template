@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Modal } from '../Modal';
 import TriggerButton from '../TriggerButton';
+import './Container.css';
 
 // The whole screen is the container.
 // The background darkens when the popup is visible
@@ -9,6 +10,39 @@ import TriggerButton from '../TriggerButton';
 
 class Container extends Component {
   state = { isShown: false };
+
+  // Stop scrolling when modal is open
+  toggleScrollLock = () => {
+    document.querySelector('html').classList.toggle('scroll-lock');
+  }
+
+  showModal = () => {
+    this.setState({ isShown: true }, () => {
+    this.closeButton.focus();
+    this.toggleScrollLock();
+    })
+  }
+
+  // closeModal sets isShown to false and Modal no longer renders in the DOM.
+  // it gives focus to the trigger button and toggles scroll lock.
+  closeModal = () => {
+    this.setState({ isShown: false });
+    this.TriggerButton.focus();
+    this.toggleScrollLock();
+  }
+
+  // closes Modal if Escape is pressed on the keyboard
+  onKeyDown = (event) => {
+    if (event.keyCode === 27) {
+      this.closeModal();
+    }
+  };
+
+  // closes Modal if you click outside of the Modal
+  onClickOutside = (event) => {
+    if (this.modal && this.modal.contains(event.target)) return
+    this.closeModal();
+  }
 
   render() {
     return (
@@ -21,7 +55,13 @@ class Container extends Component {
 
   /*
     Conditionally renders the Modal
+    onSubmit form submit action
+    modalRef to refer to the modal area
+    buttonRef to refer to close button
+    closeModal and showModal to close and open Modal
+    onClickOutside detect user clicked outside the Modal
   */
+
   {this.state.isShown ? (
     <Modal
       onSubmit={this.props.onSubmit}
