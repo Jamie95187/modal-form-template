@@ -1,7 +1,12 @@
 import React, { Component, createPortal } from 'react';
+import './Modal.css';
 import { FocusTrap } from 'focus-trap-react';
 import { Form } from '../Form';
 import TriggerButton from '../TriggerButton/TriggerButton';
+
+// tabIndex -1 makes it non-focusable. You can give tabIndex of 1 or above
+// to any element and they can be focused with TAB key. Since, we do not want to focus
+// on Modal if its not visible, we gave it -1
 
 const Modal = ({
   onClickModal,
