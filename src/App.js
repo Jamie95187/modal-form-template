@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container } from './Container';
+import { Filler } from './Filler';
 
-function App() {
+const App = () => {
+
+  const triggerText = 'Open Form';
+
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.name.value);
+    console.log(event.target.email.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Filler />
+      <Container triggerText={triggerText} onSubmit={onSubmit}/>
+      <Filler />
+      <Filler />
+      <Filler />
     </div>
-  );
+  )
 }
 
 export default App;
