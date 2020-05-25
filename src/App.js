@@ -23,8 +23,6 @@ const App = () => {
       <Filler />
       <Container triggerText={triggerText} onSubmit={onSubmit}/>
       <Filler />
-      <Filler />
-      <Filler />
     </div>
   )
 }
