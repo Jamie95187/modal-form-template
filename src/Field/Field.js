@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Field.css';
 import './text-input-style.css';
 
 class Field extends Component {
@@ -50,15 +51,23 @@ class Field extends Component {
     const { focussed, value, error, label } = this.state;
     const { id, type, locked } = this.props;
 
+    const fieldClassName = `field ${ (locked ? focussed : focussed || value) &&
+    'focussed'} ${locked && !focussed && 'locked'}`;
+
     return (
-      <div className="field">
+      <div className={fieldClassName}>
         <input
           id={id}
           type="text"
           value={value}
           placeholder={label}
           onChange={this.onChange}
+          onFocus={() => !locked && this.setState({ focussed: true })}
+          onBlur={() => !locked && this.setState({ focussed: false})}
         />
+        <label htmlFor={id} className={error && 'error'}>
+          {error || label}
+        </label>
       </div>
     );
   }

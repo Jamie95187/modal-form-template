@@ -43,3 +43,21 @@
 .field input::-moz-placeholder {
   color: rgb(255, 255, 255, 0.8);
 }
+
+.field input + label {
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s all ease-in-out;
+}
+
+.field input + label.error {
+  color: #ec392f;
+}
