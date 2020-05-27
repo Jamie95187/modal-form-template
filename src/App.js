@@ -14,14 +14,14 @@ const App = () => {
 
   const onSubmit = (event) => {
     event.preventDefault(event);
-    console.log(event.target.name.value);
-    console.log(event.target.email.value);
+    // console.log(event.target.name.value);
+    // console.log(event.target.email.value);
   }
 
   return (
     <div className="App">
       <Filler />
-      <Container triggerText={triggerText} onSubmit={onSubmit}/>
+        <Container triggerText={triggerText} onSubmit={onSubmit}/>
       <Filler />
     </div>
   )

@@ -2,7 +2,6 @@ import React from 'react';
 import './Modal.css';
 import FocusTrap from 'focus-trap-react';
 import Form from '../Form/Form';
-import Field from '../Field/Field';
 import ReactDOM from 'react-dom';
 
 // tabIndex -1 makes it non-focusable. You can give tabIndex of 1 or above
@@ -10,6 +9,9 @@ import ReactDOM from 'react-dom';
 // on Modal if its not visible, we gave it -1
 
 // The aside tag takes 100% height and width, has a dark overlay background.
+
+// FocusTrap is used to stop the user going outside of the focusTrapped components
+// (eg. pressing tab will stop the user going outside of the modal if its open)
 
 const Modal = ({
   onClickOutside,
@@ -49,13 +51,6 @@ const Modal = ({
 
     <div className="modal-body">
       <Form onSubmit={onSubmit} />
-      <Field
-        id={1}
-        label="Email"
-        predicted="California"
-        locked={false}
-        active={false}
-      />
     </div>
       </div>
       </aside>

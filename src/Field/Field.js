@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import "./Field.css";
 
 class Field extends Component {
@@ -19,6 +18,7 @@ class Field extends Component {
     this.setState({ value, error: "" });
   }
 
+  // Pressing 'Enter' auto completes the field into the predicted value
   handleKeyPress(event) {
     if (event.which === 13) {
       this.setState({ value: this.props.predicted });
