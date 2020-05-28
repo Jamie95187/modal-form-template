@@ -13,6 +13,8 @@ const Form = ({ onSubmit }) => {
           locked={false}
           active={false}
         />
+      </div>
+      <div className="form-group">
         <Field
           id={2}
           label="Email"
